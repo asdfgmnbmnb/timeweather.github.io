@@ -7,7 +7,7 @@ setInterval(() => {
     a = new Date();
     date = a.toLocaleDateString(undefined, options);
     time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
-    document.getElementById('time').innerHTML = time + '<br>on ' + date;
+    document.getElementById('time').innerHTML = time + '<br>' + date;
 }, 1000);
 
 
@@ -57,3 +57,18 @@ weather.fetchWeather("Serampore");
 // setTimeout(function() {
 //     location.reload();
 //   }, 30000);
+
+
+//Show More
+const loadmore = document.querySelector('.more');
+const more = document.querySelector('.view');
+
+loadmore.addEventListener('click',(e)=>{
+    more.classList.toggle('load_more');
+    if (loadmore.innerText === 'more') {
+     loadmore.innerText = 'less';   
+    }
+    else{
+        loadmore.innerText = 'more';
+    }
+})
